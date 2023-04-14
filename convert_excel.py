@@ -1,8 +1,12 @@
 import os
+import sys
 
 import pandas as pd
 
-data_file = os.path.join(os.path.dirname(__file__), 'data.xlsx')
+if len(sys.argv) < 2:
+    print("Please provide the report file path as an argument.")
+    sys.exit(1)
+data_file = sys.argv[1]
 result_file = os.path.join(os.path.dirname(__file__), 'result.xlsx')
 sheet_name = 'Detail Table'
 year = 2023
